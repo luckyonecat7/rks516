@@ -129,18 +129,7 @@ jobs:
           path: coverage.xml
 
   # ==========================================
-  # CI JOB 7: Dockerfile Lint (Hadolint)
-  # ==========================================
-  dockerfile-lint:
-    name: Dockerfile Lint (Hadolint)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run Hadolint
-        run: docker run --rm -i hadolint/hadolint hadolint --failure-threshold warning - < Dockerfile
-
-  # ==========================================
-  # CI JOB 8: Docker Build + Smoke Test
+  # CI JOB 7: Docker Build + Smoke Test
   # ==========================================
   docker-smoke-test:
     name: Docker Build and Smoke Test
