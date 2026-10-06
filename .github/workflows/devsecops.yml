@@ -162,7 +162,6 @@ jobs:
       - bandit-scan
       - dependency-audit
       - unit-test
-      - dockerfile-lint
       - docker-smoke-test
     if: github.event_name != 'pull_request'
     runs-on: self-hosted
