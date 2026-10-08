@@ -136,7 +136,7 @@ def info():
 #---
 
 if __name__ == "__main__":
-    # Debug mati; host dikontrol lewat env (Dockerfile mengatur 0.0.0.0).
+    # Debug mati; host dikontrol lewat env (Dockerfile mengatur 0.0.0.0)..
     app.run(
         host=os.environ.get("FLASK_HOST", "127.0.0.1"),
         port=int(os.environ.get("FLASK_PORT", "5000")),
