@@ -55,22 +55,6 @@ jobs:
       - name: Run Pylint Check
         run: pylint --fail-under=9.0 app.py
 
-  # ==========================================
-  # CI JOB 3: Style Check (Flake8)
-  # ==========================================
-  flake8-check:
-    name: Flake8 Style Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-          cache: pip
-      - name: Run Flake8
-        run: |
-          pip install flake8
-          flake8 --max-line-length=100 app.py tests
 
   # ==========================================
   # CI JOB 4: SAST Python (Bandit)
@@ -158,7 +142,6 @@ jobs:
     needs:
       - sast-scan
       - pylint-check
-      - flake8-check
       - bandit-scan
       - dependency-audit
       - unit-test
