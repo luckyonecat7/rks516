@@ -141,7 +141,7 @@ jobs:
     name: Build & Deploy to VirtualBox VM 
     needs:
       - sast-scan
-      - pylint-check
+      - pylint-check 
       - bandit-scan
       - dependency-audit
       - unit-test
