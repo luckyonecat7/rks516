@@ -115,7 +115,7 @@ def logout():
     flash("Anda telah logout", "info")
     return redirect(url_for("login"))
 
-
+# Tambahan Route 
 @app.route("/about")
 def about():
     """Halaman informasi aplikasi untuk pengujian CI/CD."""
@@ -133,7 +133,7 @@ def info():
         "version": "1.1.0",
         "environment": "Testing CI/CD"
     }, 200
-
+#---
 
 if __name__ == "__main__":
     # Debug mati; host dikontrol lewat env (Dockerfile mengatur 0.0.0.0).
