@@ -90,6 +90,14 @@ jobs:
           pip install pip-audit
           pip-audit -r requirements.txt
 
+  dockerfile-lint:
+    name: Dockerfile Lint (Hadolint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Hadolint
+        run: docker run --rm -i hadolint/hadolint hadolint --failure-threshold warning - < Dockerfile
+
   # ==========================================
   # CI JOB 6: Unit Test + Coverage (pytest)
   # ==========================================
