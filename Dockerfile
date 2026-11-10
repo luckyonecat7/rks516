@@ -19,7 +19,7 @@ USER appuser
 
 EXPOSE 5000
 
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-  CMD python -c "import urllib.request as u; u.urlopen('http://127.0.0.1:5000/health')" || exit 1
+# HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+#   CMD python -c "import urllib.request as u; u.urlopen('http://127.0.0.1:5000/health')" || exit 1
 
 CMD ["python", "app.py"]
